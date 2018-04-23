@@ -14,27 +14,57 @@ $str = 'Bacon ipsum dolor amet pastrami cupim short ribs, ham shoulder corned be
   bacon. Beef ribs capicola ham hock, pork chop shoulder kielbasa bresaola sausage alcatra sirloin buffalo flank 
   pork loin biltong.';
 
-// get number of characters in string
+/**
+ * Counts characters in a string
+ *
+ * @param $str string
+ *
+ * @return integer number of characters
+ */
 function countCharacters($str) {
     return strlen($str);
 }
 
-// get number of words in string
+/**
+ * Counts words in a string
+ *
+ * @param $str string
+ *
+ * @return integer number of words
+ */
 function countWords($str) {
     return str_word_count($str);
 }
 
-// get number of sentences
+/**
+ * Counts sentences in a string
+ *
+ * @param $str string
+ *
+ * @return integer number of sentences
+ */
 function countSentences($str) {
     return preg_match_all('/[^\s](\.|\!|\?)(?!\w)/',$str,$match);
 }
 
-// number of paragraphs
+/**
+ * Counts paragraphs in a string
+ *
+ * @param $str string
+ *
+ * @return integer number of paragraphs
+ */
 function countParagraphs($str) {
     return substr_count($str,"\n");
 }
 
-// get longest word
+/**
+ * Works out longest word in a string
+ *
+ * @param $str string
+ *
+ * @return String longest word
+ */
 function getLongestWord($str) {
     // get array of words
     $str = explode(' ', $str);
@@ -51,7 +81,13 @@ function getLongestWord($str) {
     return $longestWord;
 }
 
-// get average sentence length
+/**
+ * Works out average length of sentences in string
+ *
+ * @param $str string
+ *
+ * @return integer average length of sentences
+ */
 function avgSentenceLength($str) {
 
     $totalLength = 0;
